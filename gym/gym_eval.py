@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 from pyvirtualdisplay import Display
 from stable_baselines3 import PPO
 import warnings
@@ -168,7 +168,7 @@ results = []
 episodes = config['episodes']
 
 for episode in range(config['episodes']):
-    obs = env.reset()
+    obs, _ = env.reset()
 
     total_reward = 0
     done = False
@@ -188,7 +188,8 @@ for episode in range(config['episodes']):
             if config['env'] == 'LL':   
                 if (obs[6] ==1) & (obs[7] ==1):
                     chosen_action = 0 #A true expert will do this action
-        obs, reward, done, info = env.step(chosen_action)
+        obs, reward, terminated, truncated, _ = env.step(chosen_action)
+        done = terminated or truncated
         total_reward += reward
     
     results.append({'Episode': episode + 1, 'Total Reward': total_reward/expert_reward})

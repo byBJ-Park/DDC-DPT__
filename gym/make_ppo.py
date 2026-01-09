@@ -1,4 +1,4 @@
-import gym  # gymnasium 대신 구버전 gym을 임포트합니다.
+import gymnasium as gym
 from stable_baselines3 import PPO
 import os
 
@@ -12,7 +12,7 @@ def train_full_ppo(env_id: str, save_name: str, total_steps: int):
     # gym 0.21.0 방식으로 환경 생성
     try:
         env = gym.make(env_id)
-    except gym.error.NameError:
+    except gym.error.Error:
         print(f"Error: {env_id} 환경을 찾을 수 없습니다. 패키지 설치를 확인하세요.")
         return
 
@@ -39,10 +39,10 @@ def train_full_ppo(env_id: str, save_name: str, total_steps: int):
     env.close()
 
 # 1. CartPole-v1
-train_full_ppo("CartPole-v1", "CartPole-v1_PPO", 100_000)
+# train_full_ppo("CartPole-v1", "CartPole-v1_PPO", 100_000)
 
 # 2. LunarLander-v2 (box2d-py 설치 필요)
-train_full_ppo("LunarLander-v2", "LunarLander-v2_PPO", 150_000)
+train_full_ppo("LunarLander-v3", "LunarLander-v3_PPO", 150_000)
 
 # 3. Acrobot-v1
-train_full_ppo("Acrobot-v1", "Acrobot-v1_PPO", 100_000)
+# train_full_ppo("Acrobot-v1", "Acrobot-v1_PPO", 100_000)

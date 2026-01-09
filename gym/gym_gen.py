@@ -1,4 +1,4 @@
-import gym
+import gymnasium as gym
 import numpy as np
 import pickle
 import os
@@ -30,7 +30,7 @@ def generate_histories(num_trajs, model, env_name):
     with tqdm(total=num_trajs, desc=f"Generating {num_trajs} trajectories") as pbar:
         for _ in range(num_trajs):
             # Reset environment
-            state = env.reset()
+            state, _ = env.reset()
             
             # Initialize buffers for current episode
             states = []
@@ -45,8 +45,9 @@ def generate_histories(num_trajs, model, env_name):
                 action, _ = model.predict(state, deterministic=True)
                 # Force action to be 0 if the legs are touching the ground: This is optimal behavior
                 
-                next_state, reward, done, _ = env.step(action)
-
+                next_state, reward, terminated, truncated, _ = env.step(action)
+                done = terminated or truncated
+                
                 if env_name == "LL":
                   
                     if (state[6] == 1) & (state[7] == 1):
