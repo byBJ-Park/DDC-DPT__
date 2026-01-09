@@ -1,264 +1,0 @@
-2025-01-03 23:34:20,278	INFO worker.py:1821 -- Started a local Ray instance.
-[36m(run_data_generation_and_training pid=3147459)[0m Training Progress:   0%|          | 0/10000 [00:00<?, ?it/s]
-[36m(run_data_generation_and_training pid=3147459)[0m Training Progress:   0%|          | 1/10000 [00:02<6:43:53,  2.42s/it]
-[36m(run_data_generation_and_training pid=3147460)[0m Data files already exist for the current configuration:
-[36m(run_data_generation_and_training pid=3147460)[0m Train file: datasets/trajs_zurcher_num_trajs500_dummies0x10_beta0.95_theta[1, 5, 1]_numTypes1_H100_expert_train.pkl
-[36m(run_data_generation_and_training pid=3147460)[0m Test file: datasets/trajs_zurcher_num_trajs500_dummies0x10_beta0.95_theta[1, 5, 1]_numTypes1_H100_expert_test.pkl
-[36m(run_data_generation_and_training pid=3147460)[0m Skipping data generation.
-[36m(run_data_generation_and_training pid=3147460)[0m 
-[36m(run_data_generation_and_training pid=3147460)[0m Starting repetition 1/5
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch: 1
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 0 of 4
-[36m(run_data_generation_and_training pid=3147454)[0m 
-[36m(run_data_generation_and_training pid=3147455)[0m 
-[36m(run_data_generation_and_training pid=3147459)[0m 
-[36m(run_data_generation_and_training pid=3147467)[0m 
-[36m(run_data_generation_and_training pid=3147461)[0m 
-[36m(run_data_generation_and_training pid=3147460)[0m True Q values: tensor([[  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  5.0000, -57.0603, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  5.0000, -57.0603, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -52.5342, -54.8151]], device='cuda:0')
-[36m(run_data_generation_and_training pid=3147460)[0m Predicted Q values: tensor([[  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  5.0000, -54.4329, -55.3113],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  5.0000, -54.4329, -55.3113],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623],
-[36m(run_data_generation_and_training pid=3147460)[0m         [  1.0000, -54.8866, -55.0623]], device='cuda:0')
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 111.62502193450928
-[36m(run_data_generation_and_training pid=3147460)[0m 	MAPE of r(s,a): 89.10104179382324
-[36m(run_data_generation_and_training pid=3147460)[0m 	Eval time: 0.7692708969116211
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 1 of 16Batch 2 of 16Batch 3 of 16
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 1 of 2	MSE of normalized Q-value: 97.1482048034668
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 9 of 16Batch 10 of 16
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 13 of 16Batch 14 of 16
-[36m(run_data_generation_and_training pid=3147455)[0m 	MSE of normalized Q-value: 149.24736166000366
-[36m(run_data_generation_and_training pid=3147460)[0m Predicted r values: tensor([[ 1.0000, -2.8243, -2.9436],
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 74.483837890625Batch 2 of 13Batch 3 of 13Epoch_train_loss: 142.479404296875Batch 4 of 13Batch 5 of 13
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 1 of 32Batch 2 of 32Batch 3 of 32Batch 4 of 32Batch 5 of 32Batch 6 of 32Batch 7 of 32Batch 8 of 32Batch 9 of 32Batch 10 of 32
-[36m(run_data_generation_and_training pid=3147455)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 1 of 7Epoch_train_loss: 74.483837890625Batch 2 of 7Batch 3 of 7
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 205.644150390625Batch 6 of 13
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 74.483837890625
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 265.04609374999995Batch 8 of 13Batch 9 of 13Epoch_train_loss: 322.82892578124995Batch 10 of 13Batch 11 of 13
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 25 of 32Batch 26 of 32Batch 27 of 32Batch 28 of 32Batch 29 of 32Batch 30 of 32Batch 31 of 32	MSE of normalized Q-value: 132.74696707725525
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 25Epoch_train_loss: 74.483837890625Batch 2 of 25
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 142.479404296875Batch 4 of 63Batch 5 of 63Epoch_train_loss: 205.644150390625Batch 6 of 63
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch_train_loss: 205.644150390625Batch 6 of 7	Train loss: 1.028220751953125
-[36m(run_data_generation_and_training pid=3147459)[0m 	BE loss: 0.6181814208984374
-[36m(run_data_generation_and_training pid=3147459)[0m 	CE loss: 0.4100393188476562
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train time: 0.4265744686126709
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 6 of 63Batch 7 of 63Batch 8 of 63Batch 9 of 63Batch 10 of 63Batch 11 of 63Batch 12 of 63Batch 13 of 63Batch 14 of 63Batch 15 of 63Batch 16 of 63Batch 17 of 63Batch 18 of 63Batch 19 of 63Batch 20 of 63Batch 21 of 63Batch 22 of 63Batch 23 of 63Batch 24 of 63
-[36m(run_data_generation_and_training pid=3147467)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 30 of 63Batch 31 of 63Batch 32 of 63Batch 33 of 63Batch 34 of 63Batch 35 of 63Batch 36 of 63Batch 37 of 63Batch 38 of 63Batch 39 of 63Batch 40 of 63Batch 41 of 63Batch 42 of 63Batch 43 of 63Batch 44 of 63Batch 45 of 63Batch 46 of 63
-[36m(run_data_generation_and_training pid=3147454)[0m Epoch_train_loss: 265.04609374999995Batch 8 of 25Batch 9 of 25
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 48 of 63Batch 49 of 63Batch 50 of 63Batch 51 of 63Batch 52 of 63Batch 53 of 63Batch 54 of 63Batch 55 of 63Batch 56 of 63Batch 57 of 63Batch 58 of 63Batch 59 of 63Batch 60 of 63
-[36m(run_data_generation_and_training pid=3147454)[0m Epoch_train_loss: 377.72787109374997Batch 12 of 25Batch 13 of 25Epoch_train_loss: 430.21060546875
-[36m(run_data_generation_and_training pid=3147461)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 0 of 2True Q values: tensor([[  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 113.3175802230835
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train loss: 0.856388916015625
-[36m(run_data_generation_and_training pid=3147461)[0m Training Progress:   0%|          | 0/10000 [00:00<?, ?it/s][32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Training Progress:   0%|          | 5/10000 [00:07<3:58:48,  1.43s/it][32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147461)[0m Data files already exist for the current configuration:[32m [repeated 5x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
-[36m(run_data_generation_and_training pid=3147461)[0m Train file: datasets/trajs_zurcher_num_trajs10000_dummies0x10_beta0.95_theta[1, 5, 1]_numTypes1_H100_expert_train.pkl[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Test file: datasets/trajs_zurcher_num_trajs10000_dummies0x10_beta0.95_theta[1, 5, 1]_numTypes1_H100_expert_test.pkl[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Skipping data generation.[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 5 of 7Epoch_train_loss: 152.27333496093752Batch 6 of 7	Train loss: 0.7613666748046876
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 116.95339441299438
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 0 of 13Predicted r values: tensor([[ 1.0000, -3.0586, -3.2954],
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 13Epoch_train_loss: 46.2439208984375
-[36m(run_data_generation_and_training pid=3147461)[0m Starting repetition 1/5[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch: 3[32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 72 of 125[32m [repeated 81x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 1 of 16Batch 2 of 16Batch 3 of 16Batch 4 of 16Batch 5 of 16Batch 6 of 16Batch 7 of 16
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 8 of 16Batch 9 of 16Batch 10 of 16Batch 11 of 16Batch 12 of 16Batch 13 of 16Batch 14 of 16Batch 15 of 16	MSE of normalized Q-value: 152.28317546844482
-[36m(run_data_generation_and_training pid=3147455)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147461)[0m True Q values: tensor([[  1.0000, -52.5342, -54.8151],[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m         [ 9.0000, -3.2800, -6.1766]], device='cuda:0',[32m [repeated 333x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Predicted Q values: tensor([[  1.0000, -54.8680, -55.2853],[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m 	MAPE of r(s,a): 83.79903984069824[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m 	Eval time: 0.10882067680358887[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 1 of 2	MSE of normalized Q-value: 104.78512191772461[32m [repeated 6x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 118.47996091842651
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Predicted r values: tensor([[ 1.0000, -3.0589, -3.2775],[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 41.0560888671875Batch 2 of 63Batch 3 of 63Epoch_train_loss: 81.67294677734375Batch 4 of 63Batch 5 of 63[32m [repeated 8x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 15 of 63Epoch_train_loss: 319.5582055664063Batch 16 of 63Batch 17 of 63[32m [repeated 25x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 1413.5562792968753Batch 58 of 250[32m [repeated 6x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 473.8259643554688[32m [repeated 6x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7Batch 6 of 7	MSE of normalized Q-value: 148.99289485386439
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 24 of 63Batch 25 of 63
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 25Epoch_train_loss: 42.6742431640625Batch 2 of 25[32m [repeated 21x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 2124.0676440429693Batch 94 of 250Batch 95 of 250Epoch_train_loss: 2161.2951171875006Batch 96 of 250[32m [repeated 25x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch_train_loss: 142.6507080078125Batch 6 of 7	Train loss: 0.7132535400390626[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	BE loss: 0.25571560058593756[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	CE loss: 0.45753793945312504[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train time: 0.23311090469360352[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch_train_loss: 92.49031249999999Batch 4 of 7Batch 5 of 7[32m [repeated 65x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 1658.8883032226568Batch 70 of 125Batch 71 of 125Epoch_train_loss: 1698.4039672851568[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 127 of 250Epoch_train_loss: 2728.1676391601563Batch 128 of 250Batch 129 of 250Epoch_train_loss: 2761.3301635742187
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 53 of 63Epoch_train_loss: 1022.7790966796873Batch 54 of 63Batch 55 of 63Epoch_train_loss: 1057.3557519531248Batch 56 of 63
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 0 of 2True Q values: tensor([[  1.0000, -52.5342, -54.8151],[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 57 of 63Epoch_train_loss: 1091.024543457031Batch 58 of 63Batch 59 of 63Epoch_train_loss: 1125.093127441406Batch 60 of 63Batch 61 of 63
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 118.16446542739868
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m 	Train loss: 0.6652520806884766[32m [repeated 4x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch_train_loss: 90.40177246093751Batch 4 of 7Batch 5 of 7Epoch_train_loss: 134.43495605468752Batch 6 of 7	Train loss: 0.6721747802734376
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 18 of 32Batch 19 of 32Batch 20 of 32Batch 21 of 32Batch 22 of 32Batch 23 of 32Batch 24 of 32Batch 25 of 32Batch 26 of 32Batch 27 of 32Batch 28 of 32Batch 29 of 32Batch 30 of 32Batch 31 of 32	MSE of normalized Q-value: 106.27458834648132
-[36m(run_data_generation_and_training pid=3147467)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Training Progress:   0%|          | 5/10000 [00:13<6:53:43,  2.48s/it][32m [repeated 14x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7
-[36m(run_data_generation_and_training pid=3147454)[0m 	MSE of normalized Q-value: 135.25111280168807
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 1 of 16Batch 2 of 16Batch 3 of 16Batch 4 of 16Batch 5 of 16Batch 6 of 16Batch 7 of 16Batch 8 of 16Batch 9 of 16Batch 10 of 16
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 11 of 16Batch 12 of 16Batch 13 of 16Batch 14 of 16Batch 15 of 16	MSE of normalized Q-value: 120.8510251045227
-[36m(run_data_generation_and_training pid=3147455)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 111.38242864608765
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 0 of 13Predicted r values: tensor([[ 1.0000, -2.9139, -3.6274],[32m [repeated 8x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch: 6[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 199 of 250[32m [repeated 52x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch_train_loss: 86.5036181640625Batch 4 of 7Batch 5 of 7Epoch_train_loss: 128.71037109374998Batch 6 of 7	Train loss: 0.6435518554687499
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 105.34608459472656
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m         [ 9.0000, -3.0871, -6.0823]], device='cuda:0',[32m [repeated 324x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Predicted Q values: tensor([[  1.0000, -54.8361, -55.5372],[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	MAPE of r(s,a): 83.4880428314209[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	Eval time: 0.04327988624572754[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 1 of 2	MSE of normalized Q-value: 110.94039916992188[32m [repeated 4x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7Batch 6 of 7	MSE of normalized Q-value: 122.30634362357003
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Predicted r values: tensor([[ 1.0000, -2.7919, -3.8230],[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 540.5066992187499Batch 34 of 125Batch 35 of 125Epoch_train_loss: 569.9744702148437Batch 36 of 125Batch 37 of 125[32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 5 of 13Epoch_train_loss: 117.02231689453124Batch 6 of 13Batch 7 of 13[32m [repeated 28x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 4057.9285009765626Batch 224 of 250[32m [repeated 8x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Epoch_train_loss: 458.66252441406243[32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 15 of 32Batch 16 of 32
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 225 of 250Epoch_train_loss: 4079.16072265625Batch 226 of 250[32m [repeated 22x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 825.0394580078125Batch 54 of 63Batch 55 of 63Epoch_train_loss: 852.2744653320312Batch 56 of 63[32m [repeated 24x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 241.56739501953126Batch 12 of 13	Train loss: 0.6039184875488282[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	BE loss: 0.15981716003417967[32m [repeated 11x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	CE loss: 0.4837347045898437[32m [repeated 11x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train time: 0.2520773410797119[32m [repeated 11x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 1148.3116357421873Batch 78 of 125Batch 79 of 125[32m [repeated 57x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 4184.260651855469Batch 236 of 250Batch 237 of 250Epoch_train_loss: 4205.741091308594[32m [repeated 3x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 4327.437138671875	Train loss: 0.5409296423339843
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 0 of 2True Q values: tensor([[  1.0000, -52.5342, -54.8151],[32m [repeated 11x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 99.43014848232269
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 2 of 16Batch 3 of 16Batch 4 of 16Batch 5 of 16Batch 6 of 16Batch 7 of 16Batch 8 of 16Batch 9 of 16Batch 10 of 16Batch 11 of 16Batch 12 of 16Batch 13 of 16Batch 14 of 16Batch 15 of 16
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147455)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m 	Train loss: 0.5315462371826171[32m [repeated 4x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7Batch 6 of 7	MSE of normalized Q-value: 114.26381029401507
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 1650.6466406249992Batch 122 of 125Batch 123 of 125Epoch_train_loss: 1672.5125634765618Batch 124 of 125	Train loss: 0.41812814086914046
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 1 of 63Batch 2 of 63Batch 3 of 63Batch 4 of 63Batch 5 of 63Batch 6 of 63Batch 7 of 63Batch 8 of 63
-[36m(run_data_generation_and_training pid=3147455)[0m 	MSE of normalized Q-value: 93.87995505332947
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 26 of 63Batch 27 of 63Batch 28 of 63Batch 29 of 63Batch 30 of 63Batch 31 of 63Batch 32 of 63Batch 33 of 63Batch 34 of 63Batch 35 of 63Batch 36 of 63Batch 37 of 63Batch 38 of 63Batch 39 of 63Batch 40 of 63Batch 41 of 63
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 43 of 63Batch 44 of 63Batch 45 of 63Batch 46 of 63Batch 47 of 63Batch 48 of 63Batch 49 of 63Batch 50 of 63Batch 51 of 63Batch 52 of 63Batch 53 of 63Batch 54 of 63Batch 55 of 63Batch 56 of 63Batch 57 of 63Batch 58 of 63Batch 59 of 63
-[36m(run_data_generation_and_training pid=3147461)[0m 	MSE of normalized Q-value: 37.71308617364792
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 95.11263275146484
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147461)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 0 of 13Predicted r values: tensor([[ 1.0000, -2.8043, -3.8353],[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m 
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 24 of 32Batch 25 of 32Batch 26 of 32Batch 27 of 32Batch 28 of 32Batch 29 of 32Batch 30 of 32Batch 31 of 32	MSE of normalized Q-value: 41.29258507490158
-[36m(run_data_generation_and_training pid=3147467)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch: 3[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 10 of 125[32m [repeated 52x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147454)[0m Batch 1 of 7Batch 2 of 7Batch 3 of 7Batch 4 of 7Batch 5 of 7Batch 6 of 7	MSE of normalized Q-value: 106.12443324497768
-[36m(run_data_generation_and_training pid=3147454)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m Batch 1 of 4Batch 2 of 4Batch 3 of 4	MSE of normalized Q-value: 91.97027313709259
-[36m(run_data_generation_and_training pid=3147460)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147460)[0m         [ 9.0000, -2.4489, -5.9194]], device='cuda:0',[32m [repeated 351x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Predicted Q values: tensor([[  1.0000, -54.8800, -55.6254],[32m [repeated 13x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	MAPE of r(s,a): 77.85785675048828[32m [repeated 13x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	Eval time: 0.04153609275817871[32m [repeated 13x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Batch 1 of 2	MSE of normalized Q-value: 103.11585998535156[32m [repeated 4x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Predicted r values: tensor([[ 1.0000, -2.7485, -3.8998],[32m [repeated 7x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 1 of 16Batch 2 of 16Batch 3 of 16Batch 4 of 16Batch 5 of 16Batch 6 of 16Batch 7 of 16
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 104.25484374999999Batch 6 of 13Batch 7 of 13Epoch_train_loss: 138.408017578125Batch 8 of 13Batch 9 of 13[32m [repeated 7x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 45 of 250Epoch_train_loss: 566.4083056640625Batch 46 of 250Batch 47 of 250[32m [repeated 31x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m Epoch_train_loss: 206.71966552734375Batch 12 of 13[32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 608.2718420410156[32m [repeated 8x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 14 of 16Batch 15 of 16	MSE of normalized Q-value: 51.308393597602844
-[36m(run_data_generation_and_training pid=3147455)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 35 of 125Epoch_train_loss: 370.7351196289063Batch 36 of 125[32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Epoch_train_loss: 153.91807373046873Batch 10 of 25Batch 11 of 25Epoch_train_loss: 184.13937988281248Batch 12 of 25[32m [repeated 22x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 681.016033935547Batch 62 of 63	Train loss: 0.3405080169677735[32m [repeated 6x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	BE loss: 0.13665993804931642[32m [repeated 14x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	CE loss: 0.38013922119140625[32m [repeated 14x across cluster][0m
-[36m(run_data_generation_and_training pid=3147460)[0m 	Train time: 0.5195176601409912[32m [repeated 14x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m True Q values: tensor([[  1.0000, -52.5342, -54.8151],
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 445.9852600097657Batch 44 of 125Batch 45 of 125[32m [repeated 40x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m        grad_fn=<SliceBackward0>)
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 462.47950317382816Batch 46 of 125Batch 47 of 125Epoch_train_loss: 480.5290783691407[32m [repeated 4x across cluster][0m
-Traceback (most recent call last):
-  File "/home/ehwkang/DDC-DPT/Zurcher/run_Zurcher_ray.py", line 80, in <module>
-    ray.get(results)
-  File "/home/ehwkang/.local/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 21, in auto_init_wrapper
-    return fn(*args, **kwargs)
-  File "/home/ehwkang/.local/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 103, in wrapper
-    return func(*args, **kwargs)
-  File "/home/ehwkang/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 2755, in get
-    values, debugger_breakpoint = worker.get_objects(object_refs, timeout=timeout)
-  File "/home/ehwkang/.local/lib/python3.10/site-packages/ray/_private/worker.py", line 882, in get_objects
-    ] = self.core_worker.get_objects(
-  File "python/ray/_raylet.pyx", line 3501, in ray._raylet.CoreWorker.get_objects
-  File "python/ray/includes/common.pxi", line 79, in ray._raylet.check_status
-KeyboardInterrupt
-[36m(run_data_generation_and_training pid=3147459)[0m Training Progress:   0%|          | 12/10000 [00:16<3:37:33,  1.31s/it][32m [repeated 9x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 0 of 16True Q values: tensor([[  1.0000, -52.5342, -54.8151],[32m [repeated 12x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 1 of 32Batch 2 of 32Batch 3 of 32Batch 4 of 32Batch 5 of 32Batch 6 of 32Batch 7 of 32Batch 8 of 32Batch 9 of 32Batch 10 of 32Batch 11 of 32Batch 12 of 32Batch 13 of 32Batch 14 of 32[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train loss: 0.5858524291992188[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	MSE of normalized Q-value: 99.49975204467773
-[36m(run_data_generation_and_training pid=3147455)[0m Batch 0 of 63Predicted r values: tensor([[ 1.0000, -1.7813, -4.3583],[32m [repeated 3x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Epoch: 13[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 62 of 125[32m [repeated 34x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m         [ 9.0000, -2.9351, -6.0058]], device='cuda:0',[32m [repeated 54x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Predicted Q values: tensor([[  1.0000, -54.8168, -55.5192],[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	MAPE of r(s,a): 83.37181091308594[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	Eval time: 0.022887706756591797[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m Predicted r values: tensor([[ 1.0000, -2.8837, -3.7104],
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 161.42501586914062Batch 18 of 63Batch 19 of 63Epoch_train_loss: 179.65161010742187Batch 20 of 63Batch 21 of 63
-[36m(run_data_generation_and_training pid=3147461)[0m Batch 77 of 250Epoch_train_loss: 1008.6128173828125Batch 78 of 250Batch 79 of 250[32m [repeated 8x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 572.1465197753906Batch 56 of 125[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 632.9982958984375
-[36m(run_data_generation_and_training pid=3147467)[0m Batch 57 of 125Epoch_train_loss: 594.7810168457031Batch 58 of 125[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147455)[0m Epoch_train_loss: 281.3709558105469Batch 32 of 63Batch 33 of 63Epoch_train_loss: 300.351123046875Batch 34 of 63[32m [repeated 10x across cluster][0m
-[36m(run_data_generation_and_training pid=3147454)[0m Epoch_train_loss: 360.661181640625Batch 24 of 25	Train loss: 0.4508264770507812
-[36m(run_data_generation_and_training pid=3147459)[0m 	BE loss: 0.14484227294921875[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	CE loss: 0.44101015624999995[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147459)[0m 	Train time: 0.2541341781616211[32m [repeated 2x across cluster][0m
-[36m(run_data_generation_and_training pid=3147467)[0m Epoch_train_loss: 615.3315734863281Batch 60 of 125Batch 61 of 125[32m [repeated 5x across cluster][0m
-[36m(run_data_generation_and_training pid=3147461)[0m Epoch_train_loss: 963.5354907226563Batch 74 of 250Batch 75 of 250Epoch_train_loss: 988.1576440429687
