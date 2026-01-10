@@ -3,24 +3,61 @@ import os
 import time
 from tqdm import tqdm
 import matplotlib.pyplot as plt
-import pickle
 import numpy as np
 import random
 import torch.nn as nn
-import json
-import sys
 from mlp import MLP
 from datetime import datetime
 
 
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-import torch
-import pickle
-import numpy as np
-import torch
-import pickle
-import numpy as np
+
+ENV_DATASET_FILES = {
+    "LL": "D_LunarLander_medium_mixed.npz",
+    "CP": "D_Cartpole_medium_mixed.npz",
+    "AC": "D_Acrobot_medium_mixed.npz",
+}
+ENV_ALIASES = {
+    "LL": ["lunarlander"],
+    "CP": ["cartpole"],
+    "AC": ["acrobot"],
+}
+
+
+def resolve_npz_path(config):
+    dataset_file = config.get("dataset_file")
+    if dataset_file and os.path.isfile(dataset_file):
+        return dataset_file
+
+    gym_dir = os.path.abspath(os.path.dirname(__file__))
+    repo_root = os.path.abspath(os.path.join(gym_dir, ".."))
+    dataset_dir_config = config.get("dataset_dir", "datasets")
+    if os.path.isabs(dataset_dir_config):
+        dataset_dirs = [dataset_dir_config]
+    else:
+        dataset_dirs = [
+            os.path.join(gym_dir, dataset_dir_config),
+            os.path.join(repo_root, dataset_dir_config),
+        ]
+
+    env = config.get("env")
+    filename = ENV_DATASET_FILES.get(env)
+    aliases = ENV_ALIASES.get(env, [])
+
+    for dataset_dir in dataset_dirs:
+        if not os.path.isdir(dataset_dir):
+            continue
+        if filename:
+            candidate = os.path.join(dataset_dir, filename)
+            if os.path.isfile(candidate):
+                return candidate
+        candidates = [f for f in os.listdir(dataset_dir) if f.endswith(".npz")]
+        for alias in aliases:
+            for candidate in candidates:
+                if alias in candidate.lower():
+                    return os.path.join(dataset_dir, candidate)
+    return None
 
 class Dataset(torch.utils.data.Dataset):
     """Optimized Dataset class for storing and sampling (s, a, r, s') transitions."""
@@ -30,29 +67,17 @@ class Dataset(torch.utils.data.Dataset):
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
         # Ensure path is a list
-        if not isinstance(path, list):
-            path = [path]
+        if not str(path).endswith(".npz"):
+            raise ValueError(f"Expected an .npz dataset file, got: {path}")
 
         # Load dataset efficiently
-        states, actions, next_states, rewards, done = [], [], [], [], []
-        
-        for p in path:
-            with open(p, 'rb') as f:
-                trajs = pickle.load(f)
-
-                # Extract and concatenate transitions in a single step (Vectorized)
-                states.append(np.concatenate([traj['states'] for traj in trajs], axis=0))
-                actions.append(np.concatenate([traj['actions'] for traj in trajs], axis=0))
-                next_states.append(np.concatenate([traj['next_states'] for traj in trajs], axis=0))
-                rewards.append(np.concatenate([traj['rewards'] for traj in trajs], axis=0))
-                done.append(np.concatenate([traj['done'] for traj in trajs], axis=0))
-
-        # Convert lists to single NumPy arrays
-        states = np.concatenate(states, axis=0) #dimension is #transitions x state_dim
-        actions = np.concatenate(actions, axis=0)
-        next_states = np.concatenate(next_states, axis=0)
-        rewards = np.concatenate(rewards, axis=0)
-        done = np.concatenate(done, axis=0)
+        data = np.load(path)
+        states = np.asarray(data["obs"])  # dimension is transitions x state_dim
+        actions = np.asarray(data["act"])
+        next_states = np.asarray(data["obs2"])
+        rewards = np.asarray(data["rew"])
+        done = np.asarray(data["done"])
+        self.episode_returns = np.asarray(data.get("episode_returns", []))
 
         
         # Convert to PyTorch tensors
@@ -186,11 +211,16 @@ def train(config):
         'env': config['env']
     }
 
-    path_train = build_data_filename(dataset_config, mode='train')
-    path_test = build_data_filename(dataset_config, mode='test')
+    npz_path = resolve_npz_path(config)
+    if not npz_path:
+        raise FileNotFoundError(
+            "Offline dataset not found. Expected dataset_dir to contain "
+            f"{ENV_DATASET_FILES.get(config.get('env'))} or pass dataset_file."
+        )
+    dataset_config['dataset_file'] = npz_path
+    train_dataset = Dataset(npz_path, dataset_config)
+    test_dataset = train_dataset
 
-    train_dataset = Dataset(path_train, dataset_config)
-    test_dataset = Dataset(path_test, dataset_config)
 
     train_loader = torch.utils.data.DataLoader(
         train_dataset, batch_size=config['batch_size'], shuffle=config['shuffle']
@@ -233,12 +263,28 @@ def train(config):
     
     repetitions = config['repetitions']  # Number of repetitions
 
+    episode_returns = np.asarray(getattr(train_dataset, "episode_returns", []))
+    if episode_returns.size > 0:
+        printw(
+            "Episode returns summary - "
+            f"count={episode_returns.size}, "
+            f"mean={episode_returns.mean():.4f}, "
+            f"std={episode_returns.std():.4f}, "
+            f"min={episode_returns.min():.4f}, "
+            f"max={episode_returns.max():.4f}",
+            config,
+        )
+        
     rep_test_r_MAPE_loss = []
     rep_best_r_MAPE_loss = []
+    rep_episode_returns = []
 
     
     for rep in range(repetitions):
         print(f"\nStarting repetition {rep+1}/{repetitions}")
+        if episode_returns.size > 0:
+            rep_episode_returns.append(episode_returns)
+            
         train_loss = []
         train_be_loss = []
         train_ce_loss = []
@@ -510,6 +556,8 @@ def train(config):
                 plt.tight_layout()
                 plt.savefig(f"figs/loss/{build_log_filename(config)}_rep{rep}_losses.png")
                 plt.close()
+                
+
             ############### Finish of an epoch ##############
         ##### Finish of all epochs #####
         
@@ -549,6 +597,25 @@ def train(config):
     plt.tight_layout()
     plt.savefig(f"figs/loss/Reps{repetitions}_{build_log_filename(config)}_losses.png")
     plt.close()
+    
+    if rep_episode_returns:
+        plt.figure()
+        all_returns = []
+        for returns in rep_episode_returns:
+            steps = np.arange(len(returns))
+            all_returns.append(returns)
+            plt.plot(steps, returns, alpha=0.3)
+        mean_returns = np.mean(all_returns, axis=0)
+        std_returns = np.std(all_returns, axis=0)
+        plt.plot(steps, mean_returns, linewidth=2, color='red')
+        plt.fill_between(steps, mean_returns - std_returns, mean_returns + std_returns, alpha=0.2)
+        env_name = config.get("env", "env")
+        plt.title(f"SBEED ({env_name} offline mixed)")
+        plt.xlabel("Gradient Updates")
+        plt.ylabel("Average Episode Reward")
+        plt.savefig(f"figs/loss/Reps{repetitions}_{build_log_filename(config)}_episode_returns.png")
+        plt.close()    
+    
     
     printw(f"\nTraining completed.", config)
     mean_best_r_mape = np.mean(rep_best_r_MAPE_loss) 

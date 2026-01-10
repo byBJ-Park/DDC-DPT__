@@ -1,7 +1,7 @@
 import torch
 import argparse
 import json
-import gym_gen, gym_train
+import gym_train
 import ray
 import os
 
@@ -23,18 +23,13 @@ def run_data_generation_and_training(config, gpu_id=None):
         with open("main_output.log", "a") as log:
             log.write(f"PID {os.getpid()} - Device {device} - {message}\n")
 
-    log_message(f"Experiment config ({exp_config_str}): Starting data generation")
+    log_message(f"Experiment config ({exp_config_str}): Starting training")
     if torch.cuda.is_available():
         log_message(f"Using GPU: {torch.cuda.get_device_name(device)}")
         log_message(f"Allocated GPU memory: {torch.cuda.memory_allocated(device) / 1e9:.2f} GB")
     else:
         log_message("Running on CPU")
 
-    gym_gen.generate(config)
-    
-    log_message(f"Experiment config ({exp_config_str}): Completed data generation")
-    log_message(f"Experiment config ({exp_config_str}): Starting training")
-    
     # Training
     gym_train.train(config)
     
