@@ -22,7 +22,7 @@ ENV_DATASET_FILES = {
 }
 
 ENV_GYM_IDS = {
-    "LL": "LunarLander-v2",
+    "LL": "LunarLander-v3",
     "CP": "CartPole-v1",
     "AC": "Acrobot-v1",
 }
@@ -450,6 +450,20 @@ def train(config):
                 be_error_naive = td_error**2-config['beta']**2 * vnext_dev**2 #dimension is (batch_size*horizon,)
                 #We call it naive because we just add pivot r for every actions we see in the batch
 
+                diag_interval = config.get("diag_interval", 100)
+                should_log_diag = update == 0 or (
+                    diag_interval and (update + 1) % diag_interval == 0
+                )
+                if should_log_diag:
+                    td_mean = td_error.mean().item()
+                    td_std = td_error.std(unbiased=False).item()
+                    vnext_mean = vnext_dev.mean().item()
+                    vnext_std = vnext_dev.std(unbiased=False).item()
+                    printw(
+                        f"\tDiagnostics - td_error mean/std: {td_mean:.6f}/{td_std:.6f}, "
+                        f"vnext_dev mean/std: {vnext_mean:.6f}/{vnext_std:.6f}",
+                        config,
+                    )
                 # #At terminal state, terminal action is trival. Set it as pivot action.
                 # if config['env'] == 'LL':
                 #     #For LunarLander, set the pivot action to be action 2.

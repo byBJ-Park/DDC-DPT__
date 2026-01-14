@@ -74,9 +74,9 @@ class MLP(MultiHeadedMLPModule):
         
         next_q_values, _ = super().forward(next_states)
        
-        #bound all outputs to non-negative values, using softplus
-        q_values = F.softplus(q_values)
-        next_q_values = F.softplus(next_q_values)
-        vnext_values = F.softplus(vnext_values)
+        # #bound all outputs to non-negative values, using softplus
+        # q_values = F.softplus(q_values)
+        # next_q_values = F.softplus(next_q_values)
+        # vnext_values = F.softplus(vnext_values)
         
         return q_values, next_q_values, vnext_values
