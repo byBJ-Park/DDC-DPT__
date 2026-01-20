@@ -1,0 +1,32 @@
+{
+  "global_config": {
+    "beta": 0.99
+  },
+  "training_config": {
+    "h_size": 256,
+    "n_layer": 3,
+    "shuffle": true,
+    "seed": 1,
+    "store_gpu": true,
+    "layer_norm": false,
+    "weight_init": "orthogonal",
+    "num_updates": 100000,
+    "repetitions": 1,
+    "zero_bias_correction": true,
+    "online_eval_interval": 1000,
+    "online_eval_episodes": 10,
+    "lr": 0.0001137454094733556,
+    "decay": 6.142330947711325e-05,
+    "clip": 10.0,
+    "d_q_ratio": 5
+  },
+  "env_config": {
+    "env": "LL"
+  },
+  "experiments": [
+    {
+      "batch_size": 1024,
+      "reward_scale": 10
+    }
+  ]
+}

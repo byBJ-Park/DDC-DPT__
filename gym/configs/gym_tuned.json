@@ -1,0 +1,30 @@
+{
+  "global_config": {
+    "beta": 0.95
+  },
+  "training_config": {
+    "h_size": 128,
+    "n_layer": 3,
+    "shuffle": true,
+    "seed": 1,
+    "store_gpu": true,
+    "layer_norm": true,
+    "num_updates": 200000,
+    "repetitions": 1,
+    "zero_bias_correction": true,
+    "online_eval_interval": 2000,
+    "online_eval_episodes": 10,
+    "lr": 0.0003,
+    "decay": 0.00001,
+    "clip": 1.0
+  },
+  "env_config": {
+    "env": "LL"
+  },
+  "experiments": [
+    {
+      "batch_size": 512,
+      "reward_scale": 1
+    }
+  ]
+}

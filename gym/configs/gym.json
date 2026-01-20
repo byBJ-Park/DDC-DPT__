@@ -1,30 +1,30 @@
 {
   "global_config": {
-  "beta": 1
-  }
-  ,
+    "beta": 0.99
+  },
   "training_config": {
-  "h_size": 64,
-  "n_layer": 2,
-  "shuffle": true,
-  "seed": 1,
-  "test": false,
-  "store_gpu": true,
-  "layer_norm": false,
-  "num_epochs": 5000,
-  "repetitions": 1,
-  "lr":0.0005,
-  "Tik": false,
-  "decay": 0.001,
-  "clip": 1
-  }
-  ,
+    "h_size": 256,
+    "n_layer": 3,
+    "shuffle": true,
+    "seed": 1,
+    "layer_norm": false,
+    "num_epochs": 30000,
+    "num_trajs": 1000,
+    "repetitions": 1,
+    "eval_interval": 1000,
+    "eval_episodes": 10,
+    "lr": 0.0001,
+    "decay": 0.00006,
+    "clip": 10.0,
+    "d_q_ratio": 5,
+    "zero_bias_correction": true
+  },
   "env_config": {
-    "env": "LL"
+    "env": "CP"
   },
   "experiments": [
     {
-       "num_trajs": 15, "batch_size": 256
+      "batch_size": 256
     }
   ]
 }
